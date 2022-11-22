@@ -1,9 +1,20 @@
 # [NOT MAINTAINED] Please use <https://github.com/SeleniumHQ/docker-selenium>
 
-
 <img id="header" width="700" src="./images/icons/logo_wide.jpg" />
 
 # Selenium in Docker with Chrome and Firefox
+
+Note: this is a fork of elgalu/docker-selenium. It only removes the browsermob due to vulnerability issues (Log4J).
+
+Example of build:
+
+```
+docker build -t docker-selenium:latest \
+    --build-arg FF_VER=107.0 \
+    --build-arg GECKOD_VER=0.32.0 \
+    --build-arg EXPECTED_CHROME_VERSION=107.0.5304.110 \
+    -f ./Dockerfile
+```
 
 [![Build Status](https://travis-ci.org/elgalu/docker-selenium.svg?branch=master)](https://travis-ci.org/elgalu/docker-selenium "Travis CI")
 [![Docker Pulls](https://img.shields.io/docker/pulls/elgalu/selenium.svg)](https://hub.docker.com/r/elgalu/selenium/tags/)
